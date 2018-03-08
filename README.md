@@ -27,7 +27,7 @@ The new Watson Conversation API makes it easy to build a bot. Watson combines a 
 
 With the IBM Watson™ Conversation service, you can create an application that understands natural-language input and uses machine learning to respond to customers in a way that simulates a conversation between humans.
 
-1. Create your Watson conversations service on Bluemix
+# Create your Watson conversations service on Bluemix
 Go to your IBM Cloud account and open the catalog. Look for Watson Conversations service and click on it.  (If you previously created a Conversation service, you can use that.)
 
 ![](/screenshots/Picture1.png?raw=true)
@@ -45,15 +45,16 @@ Click on Log in with IBM ID and you will automatically access the service. It us
 
 ![](/screenshots/Picture4.png?raw=true)
  
-2. Create a workspace
+# Create a workspace
 
 The natural-language processing for the Conversation service happens inside a workspace, which is a container for all of the artifacts that define the conversation flow for an application. A single Conversation service instance can contain multiple workspaces.
 
-You can create a workspace and start from scratch or import an existing conversation. Let's start by importing a conversation. Click on the import icon shown in the image below. 
+You can create a workspace and start from scratch or import an existing conversation. 
+Let's start by importing a conversation. Download the PizzaOrder.json file. 
+
+Click on the import icon shown in the image below. 
 
  
-
-Navigate in your computer to find the json file that contains the conversation sample. In the provided Box folder (https://ibm.box.com/v/nokia-coding-club ) you will find samples. Open Session 1 - Bots folder and download a sample conversation. DoctorWatson.json is in Finnish and PizzaOrder.json in English.
 
 When you import a workspace, you can choose to import only the intents and entities, which can be useful if you want to build a new dialog using the same training data. In this case we will import everything.
 
@@ -62,7 +63,7 @@ Navigate though the sample and test the conversation in the dialog tab.
  
 Now you can start creating your own bot conversation! 
 
-3. Create your own conversation
+# Create your own conversation
 
 Click on create to start your own conversation. 
  
@@ -73,20 +74,20 @@ Give your workspace a name and choose the language for your bot. The available l
 Now you can start creating your own intents, entities and dialog flow. 
 
 Each workspace contains the following types of artifacts:
-- Intents: An intent represents the purpose of a user's input, such as a question about business locations or a bill payment. You define an intent for each type of user request you want your application to support.
+- **Intents:** An intent represents the purpose of a user's input, such as a question about business locations or a bill payment. You define an intent for each type of user request you want your application to support.
 In the user interface, the name of an intent is always prefixed with the # character.
 To train the workspace to recognize your intents, you supply lots of examples of user input and indicate which intents they map to.
 
-- Entities; An entity represents a term or object that is relevant to your intents and that provides a specific context for an intent. For example, an entity might represent a city where the user wants to find a business location, or the amount of a bill payment.
+- **Entities:** An entity represents a term or object that is relevant to your intents and that provides a specific context for an intent. For example, an entity might represent a city where the user wants to find a business location, or the amount of a bill payment.
 In the user interface, the name of an entity is always prefixed with the @ character.
 To train the workspace to recognize your entities, you list the possible values for each entity and synonyms that users might enter.
 
-- Dialog: A dialog is a branching conversation flow that defines how your application responds when it recognizes the defined intents and entities.
+- **Dialog:** A dialog is a branching conversation flow that defines how your application responds when it recognizes the defined intents and entities.
 You use the dialog builder to create conversations with users, providing responses based on the intents and entities that you recognize in their input.
 
 As you add information, the workspace trains itself, so you don't have to do anything to initiate the training.
 
-1.3.1 Intents
+# Intents
 To plan the intents for your application, you need to consider what your customers might want to do, and what you want your application to be able to handle. Choosing the correct intent for a user's input is the first step in providing a useful response. The intents you identify for your application will determine the dialog flows you need to create; they also might determine which back-end systems your application needs to integrate with in order to complete customer requests (such as customer databases or payment-processing systems).
 
 Check this video to about creating intents: https://youtu.be/DmvN6ZJrZE4
@@ -96,13 +97,13 @@ Create the intent #greetings, and write all the possible ways your bot users wil
 Hello, hi, hola, moi, good morning, good afternoon…. Etc. 
           
 
-1.3.2 Entities
+# Entities
 An entity represents a term or object in the user's input that provides clarification or specific context for a particular intent. If intents represent verbs (something a user wants to do), entities represent nouns (such as the object of, or the context for, an action). Entities make it possible for a single intent to represent multiple specific actions. An entity defines a class of objects, with specific values representing possible objects in that class.
 
 Check this video about creating entities: https://youtu.be/oSNF-QCbuDc 
 
 
-1.3.3 Dialog
+# Dialog
 
 A dialog uses the intents and entities that have been identified, plus context from the application, to interact with the user and ultimately provide a response.
 The response might be the answer to a question such as Where can I get some gas? or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, "Where can I get some food?" you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
@@ -111,15 +112,14 @@ The dialog is stateless, meaning that it does not retain information from one in
 Check this video about creating dialogs: https://youtu.be/3HSaVfr3ty0 
 
 
-1.4 Export & import a workspace
+# Export & import a workspace
 Exporting a workspace saves a copy of all workspace data in a JSON file. Use this option if you want to import the workspace into a different service instance or save a copy of the workspace data offline. 
 
 Export the JSON file directly from your Watson Conversations dashboard by clicking in the three dots and selecting 'Download as JSON'.
-
  
 In the free version of the Conversation service you will only be able to have 5 workspaces at the same time.  The Standard version allows up to 20 different workspaces at the same time. 
 
-1.5 Testing your dialog
+# Testing your dialog
 
 As you make changes to your dialog, you can test it at any time to see how it responds to input.
 1.	From the Dialog tab, click the   icon.
@@ -132,7 +132,7 @@ The chat window indicates what intents and entities were recognized in the input
 As you continue to interact with the dialog, you can see how the conversation flows through the dialog.
 If you determine that the wrong intents or entities are being recognized, you might need to modify your intent or entity definitions. If the right intents and entities are being recognized, but the wrong nodes are being triggered in your dialog, make sure your conditions are written correctly.
 
-1.6 Get your credentials 
+# Get your credentials 
 In this example, we will need your Watson conversation credentials and your workspace ID. Save these credentials, because we will need them later in Step 3. 
 
 1.	Get your workspace ID
@@ -141,14 +141,12 @@ Note: The ID showed in this document does not work, use your own.
     
 
 2.	Watson Conversations credentials 
-In Bluemix open your Conversation service and click on 'Service credentials'.
+In IBM Cloud open your Conversation service and click on 'Service credentials'.
  
-
 
 
 Click on 'View credentials' to get your password and username. If you don't see any credentials click on 'New credential'. 
 
- 
 
 If you want to read more about how to build your conversation with Watson check the official documentation:
 
@@ -163,7 +161,7 @@ https://www.ibm.com/watson/developercloud/doc/conversation/index.html
 4.	Locate the NODE-RED Starter in the boilerplate section (Apps í Boilerplates) of the catalog and click on it. 
  
 
-5.	Enter a name for your application, as shown below (host will automatically be completed).  The host name must be unique on Bluemix, so please choose a name with your company name or initials to try to make a unique name.  Press 'CREATE'. 
+5.	Enter a name for your application, as shown below (host will automatically be completed).  The host name must be unique on IBM Cloud, so please choose a name with your company name or initials to try to make a unique name.  Press 'CREATE'. 
  
 6.	Your application is now staging and will be up and running in a short while. Press 'OVERVIEW' to see information about your application.
 
@@ -173,7 +171,7 @@ https://www.ibm.com/watson/developercloud/doc/conversation/index.html
 
  
 
-9.	Write an username and a password of your choice and click 'Next'. Remember that it does not have to be related to your Bluemix access. 
+9.	Write an username and a password of your choice and click 'Next'. Remember that it does not have to be related to your IBM Cloud ID. 
  
 Node-RED is an open source project so you can add new nodes to the palette by modifying the package.json file. We will do this later on in the lab. 
 
@@ -218,7 +216,7 @@ Import the flow by simply clickcing on the 3 white lines on the top right corner
  
 This will create an exact flow as shown in the first picture of this section. You will need to do some editing on few nodes. 
 
-Edit the conversation node with your own credentials. You can find the credentials in the Bluemix dashboard where you launched the convesation service (show in step 1.1). You will also need the workspace ID. This can be found inside the Watson Coversation service. 
+Edit the conversation node with your own credentials. You can find the credentials in the IBM Cloud dashboard where you launched the convesation service (show in step 1.1). You will also need the workspace ID. This can be found inside the Watson Coversation service. 
  
 Deploy your application changes from the Deploy button on the top right side of the screeen. 
  
